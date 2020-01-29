@@ -16,7 +16,7 @@ for i in posts:
 
 #ordena lista
 def myFunc(e):
-    return e['price']
+    return (e['price'], e['product_id'])
 
 listaPromocao.sort(key=myFunc)
 
@@ -33,7 +33,7 @@ response_a = []
 auxdict = {}
 
 for i in listaPromocaoSemRep:
-    auxdict.update({'product_id':i['product_id'], 'price':i['price']})
+    auxdict.update({'product_id':i['product_id'], 'price_field':i['price']})
     response_a.append(auxdict)
     auxdict = {}
     
@@ -51,7 +51,7 @@ for i in posts:
          
 #ordena lista
 def myFunc(e):
-    return e['price']
+    return (e['price'], e['product_id'])
 
 postsInsta.sort(key=myFunc)
 
@@ -62,7 +62,7 @@ chave = ''
 for i in postsInsta:
     if i['product_id'] != chave:
 #        postsInstaSemRep.append(i)
-        auxdict.update({'product_id':i['product_id'], 'price':i['price']})
+        auxdict.update({'product_id':i['product_id'], 'price_field':i['price']})
         response_b.append(auxdict)
         auxdict = {}
         chave = i['product_id']
@@ -114,12 +114,13 @@ for i in postsCheck:
         preco = i['price']
     if i['price'] != preco:
         response_d.append(i['product_id'])
+        
 
 #dicionario com as respostas finais
 response = {
         "full_name": "Beatriz Campos de Almeida de Castro Monteiro",
         "email": "beatriz.campos.monteiro@usp.br",
-        "code_link'": "https://github.com/biamont/psel-raccoon",
+        "code_link'": "github.com/biamont/psel-raccoon",
         "response_a": response_a,
         "response_b": response_b,
         "response_c": response_c,
@@ -127,7 +128,9 @@ response = {
         }
 
 response = json.dumps(response)
+print(response)
 
-url = 'https://us-central1-psel-clt-ti-junho-2019.cloudfunctions.net/psel_2019_post'
-confirma = requests.post(url, data = response, timeout=2.50)
-print(confirma)
+#url = 'https://us-central1-psel-clt-ti-junho-2019.cloudfunctions.net/psel_2019_post'
+#head = {"Content-Type": "application/json"}
+#confirma = requests.post(url, data = response, headers=head, timeout=2.50)
+#print(confirma)
