@@ -120,7 +120,7 @@ for i in postsCheck:
 response = {
         "full_name": "Beatriz Campos de Almeida de Castro Monteiro",
         "email": "beatriz.campos.monteiro@usp.br",
-        "code_link'": "github.com/biamont/psel-raccoon",
+        "code_link": "github.com/biamont/psel-raccoon",
         "response_a": response_a,
         "response_b": response_b,
         "response_c": response_c,
@@ -128,9 +128,9 @@ response = {
         }
 
 response = json.dumps(response)
-print(response)
+#print(response)
 
-#url = 'https://us-central1-psel-clt-ti-junho-2019.cloudfunctions.net/psel_2019_post'
-#head = {"Content-Type": "application/json"}
-#confirma = requests.post(url, data = response, headers=head, timeout=2.50)
-#print(confirma)
+url = 'https://us-central1-psel-clt-ti-junho-2019.cloudfunctions.net/psel_2019_post'
+head = {"Content-Type": "application/json"}
+confirma = requests.post(url, data = response, headers=head, timeout=2.50)
+print(confirma)
