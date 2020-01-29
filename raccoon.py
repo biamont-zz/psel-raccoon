@@ -117,9 +117,9 @@ for i in postsCheck:
 
 #dicionario com as respostas finais
 response = {
-        "full_name": "Betariz Campos de Almeida de Castro Monteiro",
+        "full_name": "Beatriz Campos de Almeida de Castro Monteiro",
         "email": "beatriz.campos.monteiro@usp.br",
-        "code_link'": "www.github.com/name/psel-raccoon",
+        "code_link'": "https://github.com/biamont/psel-raccoon",
         "response_a": response_a,
         "response_b": response_b,
         "response_c": response_c,
